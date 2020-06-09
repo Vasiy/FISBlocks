@@ -1,7 +1,7 @@
 #include "KWP.h"
-#include <Arduino.h>
+//#include <Arduino.h> // - comment this
 
-#define DEBUG_LEVEL 1
+//#define DEBUG_LEVEL 1
 
 KWP::KWP(uint8_t receivePin, uint8_t transmitPin){
   _OBD_RX_PIN = receivePin;

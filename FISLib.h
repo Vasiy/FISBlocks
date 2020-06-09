@@ -1,7 +1,7 @@
 #ifndef FISLib_h
 #define FISLib_h
 
-#include "Arduino.h"
+//#include <Arduino.h>  // - comment this
 
 #define WRITE_PULSEW 50
 #define WRITE_STARTPULSEW 100

@@ -2,7 +2,7 @@
 #define KWP_h
 
 #include <inttypes.h>
-#include <Arduino.h>
+#include <Arduino.h>   // not comment this
 
 #include "NewSoftwareSerial.h"
 
@@ -66,4 +66,3 @@ class KWP {
 };
 
 #endif
-

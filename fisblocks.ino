@@ -1,5 +1,7 @@
+#include <Arduino.h>
 #include "KWP.h"
 #include "FISLib.h"
+#include "AnalogMultiButton.h" // https://github.com/dxinteractive/AnalogMultiButton
 
 #define MAX_CONNECT_RETRIES 5
 #define NENGINEGROUPS 7
@@ -7,15 +9,27 @@
 #define NMODULES 2
 
 // KWP
-#define pinKLineRX 2
-#define pinKLineTX 3
+#define pinKLineRX 5
+#define pinKLineTX 4
 KWP kwp(pinKLineRX, pinKLineTX);
 
 //FIS
-#define pinENABLE 4
-#define pinCLOCK 5
-#define pinDATA 6
+const int pinENABLE = 14;
+const int pinCLOCK = 15;
+const int pinDATA = 16;
 FISLib LCD(pinENABLE, pinCLOCK, pinDATA);
+
+//Buttons
+#define btn1PIN A3
+#define btn2PIN A2
+const uint8_t BUTTONS_TOTAL = 2; // 2 button on each button pin
+const int BUTTONS_VALUES[BUTTONS_TOTAL] = {30, 123}; // btn value
+AnalogMultiButton btn1(btn1PIN, BUTTONS_TOTAL, BUTTONS_VALUES); // make an AnalogMultiButton object, pass in the pin, total and values array
+const int btn_NAV = 30;
+const int btn_RETURN=123;
+AnalogMultiButton btn2(btn2PIN, BUTTONS_TOTAL, BUTTONS_VALUES);
+const int btn_INFO = 30;
+const int btn_CARS=123; 
 
 int engineGroups[NENGINEGROUPS] = { 2, 3, 20, 31, 118, 115, 15 };
 int dashboardGroups[NDASHBOARDGROUPS] = { 2 };
@@ -41,21 +55,16 @@ int count=0;
 // 0 - Nothing
 // 1 - Key Up pressed
 // 2 - Key Down pressed
-int getKeyStatusRandom(){
-  int key1=random(0,2);
-  int key2=random(0,2);
-  if(key1 == 1 && key2 == 0) return 1;
-  if(key1 == 0 && key2 == 1) return 2;
-  if(key1 == 0 && key2 == 0) return 0;
-  if(key1 == 1 && key2 == 1){
-    if(random(0,2)==1) return 1;
-    else return 2;
-  }
+
+int getKeyStatus() {
+  btn1.update();
+  btn2.update();
+  if ( btn1.isPressedAfter(btn_NAV,2000) ) return 0; // disable screen after holding more than 2 sec
+  if ( btn1.isPressed(btn_RETURN) ) return 1; // return and cars switch between modules
+  if ( btn2.isPressed(btn_CARS) ) return 2;
+  if ( btn2.isPressed(btn_INFO) ) return 3;   // switch between groups
 }
 
-// 0 - Nothing
-// 1 - Up
-// 2 - Down
 void refreshParams(int type){
   if(type==1){
     if(currentSensor < nSensors -1) currentSensor++;
@@ -98,6 +107,8 @@ void setup(){
 }
 
 void loop(){
+  getKeyStatus();
+     
   if(!kwp.isConnected()){
     LCD.showText("Starting",currentModule->name);
     if(kwp.connect(currentModule->addr, currentModule->baudrate)){
@@ -129,7 +140,7 @@ void loop(){
       else count++;
     }
     else{
-      refreshParams(1);
+      refreshParams(1); // WTF?
       count=0;
     }
   }
