@@ -5,13 +5,10 @@
 #include "AnalogMultiButton.h" // https://github.com/dxinteractive/AnalogMultiButton
 
 #define MAX_CONNECT_RETRIES 5
-#define NENGINEGROUPS 7
-#define NDASHBOARDGROUPS 1
-#define NMODULES 3              // numbers of controlled groups
 
 /* uncomment to enable boot message and boot image. Removed due excessive memory consumption */
 //#define Atmega32u4    // limited memory - welcome message and graphics disabled
-#define Atmega328
+#define Atmega328 true 
 
 #ifndef Atmega32u4 
 //  #include "GetBootMessage.h"
@@ -29,8 +26,8 @@
   const uint8_t pinKLineTX = 4;
 #endif
 #ifdef Atmega328
-  const uint8_t pinKLineRX = 2;
-  const uint8_t pinKLineTX = 3;
+  const uint8_t pinKLineRX = 3;
+  const uint8_t pinKLineTX = 2;
   // CDC
   /*const byte dinCDC = 6;
   const byte doutCDC = 7;
@@ -52,8 +49,15 @@ KWP kwp(pinKLineRX, pinKLineTX);
 FISLib FIS(FIS_ENA, FIS_CLK, FIS_DATA);
 
 //Buttons
-#define btn1PIN A3
-#define btn2PIN A2
+#ifdef Atmega32u4 
+  #define btn1PIN A3
+  #define btn2PIN A2
+#endif
+#ifdef Atmega328
+  #define btn1PIN A0
+  #define btn2PIN A1
+#endif
+
 const uint8_t BUTTONS_TOTAL = 2; // 2 button on each button pin
 const int BUTTONS_VALUES[BUTTONS_TOTAL] = {30, 123}; // btn value
 AnalogMultiButton btn1(btn1PIN, BUTTONS_TOTAL, BUTTONS_VALUES); // make an AnalogMultiButton object, pass in the pin, total and values array
@@ -63,10 +67,13 @@ AnalogMultiButton btn2(btn2PIN, BUTTONS_TOTAL, BUTTONS_VALUES);
 const int btn_INFO = 30;
 const int btn_CARS=123; 
 
-int engineGroups[NENGINEGROUPS] = { 2, 3, 20, 31, 118, 115, 15 };
-int dashboardGroups[NDASHBOARDGROUPS] = { 2 };
-int absGroups[NDASHBOARDGROUPS] = { 1 };                          
-int NABSGROUPS = { 1 };                                           //abs groups to read
+#define NENGINEGROUPS 7
+#define NDASHBOARDGROUPS 3
+#define NMODULES 2              // numbers of controlled groups
+int engineGroups[NENGINEGROUPS] = { 6, 101, 102, 115, 116, 117, 120 }; //2, 3, 20, 31, 118, 115, 15 };
+int dashboardGroups[NDASHBOARDGROUPS] = { 1, 2, 3 };
+int absGroups[NDASHBOARDGROUPS] = { 3 };                          
+//int NABSGROUPS = { 1 };                                           //abs groups to read
 //int airbagGroups[NDASHBOARDGROUPS] = { 1 };                       //airbag groups to read
 
 // Note: Each unit can have his own baudrate.
@@ -75,9 +82,9 @@ int NABSGROUPS = { 1 };                                           //abs groups t
 
 KWP_MODULE engine    = { "ECU",     ADR_Engine,    10400, engineGroups,    NENGINEGROUPS};
 KWP_MODULE dashboard = { "CLUSTER", ADR_Dashboard, 10400, dashboardGroups, NDASHBOARDGROUPS};
-KWP_MODULE absunit = {"ABS", ADR_ABS_Brakes, absGroups, NABSGROUPS};
+//KWP_MODULE absunit = {"ABS", ADR_ABS_Brakes, absGroups, NABSGROUPS};
 //KWP_MODULE airbag = {"AIRBAG", ADR_Airbag, airbagGroups, NAIRBAGGROUPS};
-KWP_MODULE *modules[NMODULES]={ &dashboard, &engine, &absunit };
+KWP_MODULE *modules[NMODULES]={ &dashboard, &engine }; //, &absunit };
 
 KWP_MODULE *currentModule=modules[0];
 int currentGroup=0;
@@ -94,12 +101,21 @@ int count=0;
 // 2 - Key Down pressed
 
 int getKeyStatus() {
-  btn1.update();
+/*  btn1.update();
   btn2.update();
   if ( btn1.isPressedAfter(btn_NAV,2000) ) return 0; // disable screen after holding more than 2 sec
   if ( btn1.isPressed(btn_RETURN) ) return 1; // return and cars switch between modules
   if ( btn2.isPressed(btn_CARS) ) return 2;
-  if ( btn2.isPressed(btn_INFO) ) return 3;   // switch between groups
+  if ( btn2.isPressed(btn_INFO) ) return 3;   // switch between groups */
+  btn1.update();
+  btn2.update();
+  if ( btn1.isPressedAfter(btn_NAV,2000) ) return 4;  // disable screen after holding more than 2 sec
+  if ( btn1.isPressed(btn_RETURN) ) return 1;         // return and cars switch between modules
+  if ( btn1.isPressedAfter(btn_RETURN,2000) ) return 11;         // return and cars switch between modules
+  if ( btn2.isPressed(btn_CARS) ) return 2;
+  if ( btn2.isPressedAfter(btn_CARS,2000) ) return 21;
+  if ( btn2.isPressed(btn_INFO) ) return 3;           // switch between groups
+  else return 0;  
 }
 
 void refreshParams(int type){

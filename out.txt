@@ -35,6 +35,8 @@ IN: sz=9 data=8 7 F6 0 20 80 0 BA 3
 OUT:3 8 9 3 
 ---KWPReceive sz=0 blockCounter=9
 IN: sz=4 data=3 9 9 3 
+
+
 label=⸮B0920933G KOMBI+WEGFARS. VDO D1
 ------readBlock 2
 ---KWPSend sz=5 blockCounter=10
