@@ -1,0 +1,1657 @@
+------connect addr=23 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=1
+bit3=1
+bit4=0
+bit5=1
+bit6=0
+bit7=0
+bit8=1 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+IN: sz=16 data=F 1 F6 B4 42 30 39 32 30 39 33 33 47 20 20 3 
+---KWPSendAckBlock blockCounter=2
+---KWPSend sz=4 blockCounter=2
+OUT:3 2 9 3 
+---KWPReceive sz=0 blockCounter=3
+IN: sz=16 data=F 3 F6 4B 4F 4D 42 49 2B 57 45 47 46 41 48 3 
+---KWPSendAckBlock blockCounter=4
+---KWPSend sz=4 blockCounter=4
+OUT:3 4 9 3 
+---KWPReceive sz=0 blockCounter=5
+IN: sz=15 data=E 5 F6 52 53 2E 20 56 44 4F 20 44 31 31 3 
+---KWPSendAckBlock blockCounter=6
+---KWPSend sz=4 blockCounter=6
+OUT:3 6 9 3 
+---KWPReceive sz=0 blockCounter=7
+IN: sz=9 data=8 7 F6 0 20 80 0 BA 3 
+---KWPSendAckBlock blockCounter=8
+---KWPSend sz=4 blockCounter=8
+OUT:3 8 9 3 
+---KWPReceive sz=0 blockCounter=9
+IN: sz=4 data=3 9 9 3 
+label=⸮B0920933G KOMBI+WEGFARS. VDO D1
+------readBlock 2
+---KWPSend sz=5 blockCounter=10
+OUT:4 A 29 2 3 
+---KWPReceive sz=0 blockCounter=11
+IN: sz=16 data=F B E7 24 5D 14 13 64 16 40 8A 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=22  text=22.00 l
+type=64  a=138  b=0  text=138.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=12
+OUT:4 C 29 2 3 
+---KWPReceive sz=0 blockCounter=13
+IN: sz=16 data=F D E7 24 5D 14 13 64 16 40 8A 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=22  text=22.00 l
+type=64  a=138  b=0  text=138.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=14
+OUT:4 E 29 2 3 
+---KWPReceive sz=0 blockCounter=15
+IN: sz=16 data=F F E7 24 5D 14 13 64 16 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=22  text=22.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=16
+OUT:4 10 29 2 3 
+---KWPReceive sz=0 blockCounter=17
+IN: sz=16 data=F 11 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=18
+OUT:4 12 29 2 3 
+---KWPReceive sz=0 blockCounter=19
+IN: sz=16 data=F 13 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=20
+OUT:4 14 29 2 3 
+---KWPReceive sz=0 blockCounter=21
+IN: sz=16 data=F 15 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=22
+OUT:4 16 29 2 3 
+---KWPReceive sz=0 blockCounter=23
+IN: sz=16 data=F 17 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=24
+OUT:4 18 29 2 3 
+---KWPReceive sz=0 blockCounter=25
+IN: sz=16 data=F 19 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=26
+OUT:4 1A 29 2 3 
+---KWPReceive sz=0 blockCounter=27
+IN: sz=16 data=F 1B E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=28
+OUT:4 1C 29 2 3 
+---KWPReceive sz=0 blockCounter=29
+IN: sz=16 data=F 1D E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=30
+OUT:4 1E 29 2 3 
+---KWPReceive sz=0 blockCounter=31
+IN: sz=16 data=F 1F E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=32
+OUT:4 20 29 2 3 
+---KWPReceive sz=0 blockCounter=33
+IN: sz=16 data=F 21 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=34
+OUT:4 22 29 2 3 
+---KWPReceive sz=0 blockCounter=35
+IN: sz=16 data=F 23 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=36
+OUT:4 24 29 2 3 
+---KWPReceive sz=0 blockCounter=37
+IN: sz=16 data=F 25 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=38
+OUT:4 26 29 2 3 
+---KWPReceive sz=0 blockCounter=39
+IN: sz=16 data=F 27 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=40
+OUT:4 28 29 2 3 
+---KWPReceive sz=0 blockCounter=41
+IN: sz=16 data=F 29 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=42
+OUT:4 2A 29 2 3 
+---KWPReceive sz=0 blockCounter=43
+IN: sz=16 data=F 2B E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=44
+OUT:4 2C 29 2 3 
+---KWPReceive sz=0 blockCounter=45
+IN: sz=16 data=F 2D E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=46
+OUT:4 2E 29 2 3 
+---KWPReceive sz=0 blockCounter=47
+IN: sz=16 data=F 2F E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=48
+OUT:4 30 29 2 3 
+---KWPReceive sz=0 blockCounter=49
+IN: sz=16 data=F 31 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=50
+OUT:4 32 29 2 3 
+---KWPReceive sz=0 blockCounter=51
+IN: sz=16 data=F 33 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=52
+OUT:4 34 29 2 3 
+---KWPReceive sz=0 blockCounter=53
+IN: sz=16 data=F 35 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=54
+OUT:4 36 29 2 3 
+---KWPReceive sz=0 blockCounter=55
+IN: sz=16 data=F 37 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=56
+OUT:4 38 29 2 3 
+---KWPReceive sz=0 blockCounter=57
+IN: sz=16 data=F 39 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=58
+OUT:4 3A 29 2 3 
+---KWPReceive sz=0 blockCounter=59
+IN: sz=16 data=F 3B E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=60
+OUT:4 3C 29 2 3 
+---KWPReceive sz=0 blockCounter=61
+IN: sz=16 data=F 3D E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=62
+OUT:4 3E 29 2 3 
+---KWPReceive sz=0 blockCounter=63
+IN: sz=16 data=F 3F E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=64
+OUT:4 40 29 2 3 
+---KWPReceive sz=0 blockCounter=65
+IN: sz=16 data=F 41 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=66
+OUT:4 42 29 2 3 
+---KWPReceive sz=0 blockCounter=67
+IN: sz=16 data=F 43 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=68
+OUT:4 44 29 2 3 
+---KWPReceive sz=0 blockCounter=69
+IN: sz=16 data=F 45 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=70
+OUT:4 46 29 2 3 
+---KWPReceive sz=0 blockCounter=71
+IN: sz=16 data=F 47 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=72
+OUT:4 48 29 2 3 
+---KWPReceive sz=0 blockCounter=73
+IN: sz=16 data=F 49 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=74
+OUT:4 4A 29 2 3 
+---KWPReceive sz=0 blockCounter=75
+IN: sz=16 data=F 4B E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=76
+OUT:4 4C 29 2 3 
+---KWPReceive sz=0 blockCounter=77
+IN: sz=16 data=F 4D E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=78
+OUT:4 4E 29 2 3 
+---KWPReceive sz=0 blockCounter=79
+IN: sz=16 data=F 4F E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=80
+OUT:4 50 29 2 3 
+---KWPReceive sz=0 blockCounter=81
+IN: sz=16 data=F 51 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=82
+OUT:4 52 29 2 3 
+---KWPReceive sz=0 blockCounter=83
+IN: sz=16 data=F 53 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=84
+OUT:4 54 29 2 3 
+---KWPReceive sz=0 blockCounter=85
+IN: sz=16 data=F 55 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=86
+OUT:4 56 29 2 3 
+---KWPReceive sz=0 blockCounter=87
+IN: sz=16 data=F 57 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=88
+OUT:4 58 29 2 3 
+---KWPReceive sz=0 blockCounter=89
+IN: sz=16 data=F 59 E7 24 5D 14 13 64 15 40 88 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=136  b=0  text=136.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+ERROR: timeout
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+ERROR: invalid maxsize
+------readBlock 2
+---KWPSend sz=5 blockCounter=1
+OUT:4 1 29 2 3 
+ERROR: invalid complement
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+ERROR: timeout
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+ERROR: invalid maxsize
+------readBlock 3
+---KWPSend sz=5 blockCounter=1
+OUT:4 1 29 3 3 
+ERROR: invalid complement
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+ERROR: timeout
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+ERROR: invalid maxsize
+------readBlock 20
+---KWPSend sz=5 blockCounter=1
+OUT:4 1 29 14 3 
+ERROR: invalid complement
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+ERROR: timeout
+------connect addr=23 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=1
+bit3=1
+bit4=0
+bit5=1
+bit6=0
+bit7=0
+bit8=1 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+IN: sz=16 data=F 1 F6 B4 42 30 39 32 30 39 33 33 47 20 20 3 
+---KWPSendAckBlock blockCounter=2
+---KWPSend sz=4 blockCounter=2
+OUT:3 2 9 3 
+---KWPReceive sz=0 blockCounter=3
+IN: sz=16 data=F 3 F6 4B 4F 4D 42 49 2B 57 45 47 46 41 48 3 
+---KWPSendAckBlock blockCounter=4
+---KWPSend sz=4 blockCounter=4
+OUT:3 4 9 3 
+---KWPReceive sz=0 blockCounter=5
+IN: sz=15 data=E 5 F6 52 53 2E 20 56 44 4F 20 44 31 31 3 
+---KWPSendAckBlock blockCounter=6
+---KWPSend sz=4 blockCounter=6
+OUT:3 6 9 3 
+---KWPReceive sz=0 blockCounter=7
+IN: sz=9 data=8 7 F6 0 20 80 0 BA 3 
+---KWPSendAckBlock blockCounter=8
+---KWPSend sz=4 blockCounter=8
+OUT:3 8 9 3 
+---KWPReceive sz=0 blockCounter=9
+IN: sz=4 data=3 9 9 3 
+label=⸮B0920933G KOMBI+WEGFARS. VDO D1
+------readBlock 2
+---KWPSend sz=5 blockCounter=10
+OUT:4 A 29 2 3 
+---KWPReceive sz=0 blockCounter=11
+IN: sz=16 data=F B E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=12
+OUT:4 C 29 2 3 
+---KWPReceive sz=0 blockCounter=13
+IN: sz=16 data=F D E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=14
+OUT:4 E 29 2 3 
+---KWPReceive sz=0 blockCounter=15
+IN: sz=16 data=F F E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=16
+OUT:4 10 29 2 3 
+---KWPReceive sz=0 blockCounter=17
+IN: sz=16 data=F 11 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=18
+OUT:4 12 29 2 3 
+---KWPReceive sz=0 blockCounter=19
+IN: sz=16 data=F 13 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=20
+OUT:4 14 29 2 3 
+---KWPReceive sz=0 blockCounter=21
+IN: sz=16 data=F 15 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=22
+OUT:4 16 29 2 3 
+---KWPReceive sz=0 blockCounter=23
+IN: sz=16 data=F 17 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=24
+OUT:4 18 29 2 3 
+---KWPReceive sz=0 blockCounter=25
+IN: sz=16 data=F 19 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=26
+OUT:4 1A 29 2 3 
+---KWPReceive sz=0 blockCounter=27
+IN: sz=16 data=F 1B E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=28
+OUT:4 1C 29 2 3 
+---KWPReceive sz=0 blockCounter=29
+IN: sz=16 data=F 1D E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=30
+OUT:4 1E 29 2 3 
+---KWPReceive sz=0 blockCounter=31
+IN: sz=16 data=F 1F E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=32
+OUT:4 20 29 2 3 
+---KWPReceive sz=0 blockCounter=33
+IN: sz=16 data=F 21 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=34
+OUT:4 22 29 2 3 
+---KWPReceive sz=0 blockCounter=35
+IN: sz=16 data=F 23 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=36
+OUT:4 24 29 2 3 
+---KWPReceive sz=0 blockCounter=37
+IN: sz=16 data=F 25 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=38
+OUT:4 26 29 2 3 
+---KWPReceive sz=0 blockCounter=39
+IN: sz=16 data=F 27 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=40
+OUT:4 28 29 2 3 
+---KWPReceive sz=0 blockCounter=41
+IN: sz=16 data=F 29 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=42
+OUT:4 2A 29 2 3 
+---KWPReceive sz=0 blockCounter=43
+IN: sz=16 data=F 2B E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=44
+OUT:4 2C 29 2 3 
+---KWPReceive sz=0 blockCounter=45
+IN: sz=16 data=F 2D E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=46
+OUT:4 2E 29 2 3 
+---KWPReceive sz=0 blockCounter=47
+IN: sz=16 data=F 2F E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=48
+OUT:4 30 29 2 3 
+---KWPReceive sz=0 blockCounter=49
+IN: sz=16 data=F 31 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=50
+OUT:4 32 29 2 3 
+---KWPReceive sz=0 blockCounter=51
+IN: sz=16 data=F 33 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=52
+OUT:4 34 29 2 3 
+---KWPReceive sz=0 blockCounter=53
+IN: sz=16 data=F 35 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=54
+OUT:4 36 29 2 3 
+---KWPReceive sz=0 blockCounter=55
+IN: sz=16 data=F 37 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=56
+OUT:4 38 29 2 3 
+---KWPReceive sz=0 blockCounter=57
+IN: sz=16 data=F 39 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=58
+OUT:4 3A 29 2 3 
+---KWPReceive sz=0 blockCounter=59
+IN: sz=16 data=F 3B E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=60
+OUT:4 3C 29 2 3 
+---KWPReceive sz=0 blockCounter=61
+IN: sz=16 data=F 3D E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=62
+OUT:4 3E 29 2 3 
+---KWPReceive sz=0 blockCounter=63
+IN: sz=16 data=F 3F E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=64
+OUT:4 40 29 2 3 
+---KWPReceive sz=0 blockCounter=65
+IN: sz=16 data=F 41 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=66
+OUT:4 42 29 2 3 
+---KWPReceive sz=0 blockCounter=67
+IN: sz=16 data=F 43 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=68
+OUT:4 44 29 2 3 
+---KWPReceive sz=0 blockCounter=69
+IN: sz=16 data=F 45 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=70
+OUT:4 46 29 2 3 
+---KWPReceive sz=0 blockCounter=71
+IN: sz=16 data=F 47 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=72
+OUT:4 48 29 2 3 
+---KWPReceive sz=0 blockCounter=73
+IN: sz=16 data=F 49 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=74
+OUT:4 4A 29 2 3 
+---KWPReceive sz=0 blockCounter=75
+IN: sz=16 data=F 4B E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=76
+OUT:4 4C 29 2 3 
+---KWPReceive sz=0 blockCounter=77
+IN: sz=16 data=F 4D E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=78
+OUT:4 4E 29 2 3 
+---KWPReceive sz=0 blockCounter=79
+IN: sz=16 data=F 4F E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=80
+OUT:4 50 29 2 3 
+---KWPReceive sz=0 blockCounter=81
+IN: sz=16 data=F 51 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=82
+OUT:4 52 29 2 3 
+---KWPReceive sz=0 blockCounter=83
+IN: sz=16 data=F 53 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=84
+OUT:4 54 29 2 3 
+---KWPReceive sz=0 blockCounter=85
+IN: sz=16 data=F 55 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=86
+OUT:4 56 29 2 3 
+---KWPReceive sz=0 blockCounter=87
+IN: sz=16 data=F 57 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=88
+OUT:4 58 29 2 3 
+---KWPReceive sz=0 blockCounter=89
+IN: sz=16 data=F 59 E7 24 5D 14 13 64 15 40 86 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=21  text=21.00 l
+type=64  a=134  b=0  text=134.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+ERROR: timeout
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+ERROR: invalid maxsize
+------readBlock 2
+---KWPSend sz=5 blockCounter=1
+OUT:4 1 29 2 3 
+ERROR: invalid complement
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+ERROR: timeout
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+ERROR: invalid maxsize
+------readBlock 3
+---KWPSend sz=5 blockCounter=1
+OUT:4 1 29 3 3 
+ERROR: invalid complement
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+ERROR: timeout
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+ERROR: invalid maxsize
+------readBlock 20
+---KWPSend sz=5 blockCounter=1
+OUT:4 1 29 14 3 
+ERROR: invalid complement
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+ERROR: timeout
+------connect addr=23 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=1
+bit3=1
+bit4=0
+bit5=1
+bit6=0
+bit7=0
+bit8=1 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+IN: sz=16 data=F 1 F6 B4 42 30 39 32 30 39 33 33 47 20 20 3 
+---KWPSendAckBlock blockCounter=2
+---KWPSend sz=4 blockCounter=2
+OUT:3 2 9 3 
+---KWPReceive sz=0 blockCounter=3
+IN: sz=16 data=F 3 F6 4B 4F 4D 42 49 2B 57 45 47 46 41 48 3 
+---KWPSendAckBlock blockCounter=4
+---KWPSend sz=4 blockCounter=4
+OUT:3 4 9 3 
+---KWPReceive sz=0 blockCounter=5
+IN: sz=15 data=E 5 F6 52 53 2E 20 56 44 4F 20 44 31 31 3 
+---KWPSendAckBlock blockCounter=6
+---KWPSend sz=4 blockCounter=6
+OUT:3 6 9 3 
+---KWPReceive sz=0 blockCounter=7
+IN: sz=9 data=8 7 F6 0 20 80 0 BA 3 
+---KWPSendAckBlock blockCounter=8
+---KWPSend sz=4 blockCounter=8
+OUT:3 8 9 3 
+---KWPReceive sz=0 blockCounter=9
+IN: sz=4 data=3 9 9 3 
+label=⸮B0920933G KOMBI+WEGFARS. VDO D1
+------readBlock 2
+---KWPSend sz=5 blockCounter=10
+OUT:4 A 29 2 3 
+---KWPReceive sz=0 blockCounter=11
+IN: sz=16 data=F B E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=12
+OUT:4 C 29 2 3 
+---KWPReceive sz=0 blockCounter=13
+IN: sz=16 data=F D E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=14
+OUT:4 E 29 2 3 
+---KWPReceive sz=0 blockCounter=15
+IN: sz=16 data=F F E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=16
+OUT:4 10 29 2 3 
+---KWPReceive sz=0 blockCounter=17
+IN: sz=16 data=F 11 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=18
+OUT:4 12 29 2 3 
+---KWPReceive sz=0 blockCounter=19
+IN: sz=16 data=F 13 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=20
+OUT:4 14 29 2 3 
+---KWPReceive sz=0 blockCounter=21
+IN: sz=16 data=F 15 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=22
+OUT:4 16 29 2 3 
+---KWPReceive sz=0 blockCounter=23
+IN: sz=16 data=F 17 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=24
+OUT:4 18 29 2 3 
+---KWPReceive sz=0 blockCounter=25
+IN: sz=16 data=F 19 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=26
+OUT:4 1A 29 2 3 
+---KWPReceive sz=0 blockCounter=27
+IN: sz=16 data=F 1B E7 24 5D 14 13 64 14 40 84 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=132  b=0  text=132.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=28
+OUT:4 1C 29 2 3 
+---KWPReceive sz=0 blockCounter=29
+IN: sz=16 data=F 1D E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=30
+OUT:4 1E 29 2 3 
+---KWPReceive sz=0 blockCounter=31
+IN: sz=16 data=F 1F E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=32
+OUT:4 20 29 2 3 
+---KWPReceive sz=0 blockCounter=33
+IN: sz=16 data=F 21 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=34
+OUT:4 22 29 2 3 
+---KWPReceive sz=0 blockCounter=35
+IN: sz=16 data=F 23 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=36
+OUT:4 24 29 2 3 
+---KWPReceive sz=0 blockCounter=37
+IN: sz=16 data=F 25 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=38
+OUT:4 26 29 2 3 
+---KWPReceive sz=0 blockCounter=39
+IN: sz=16 data=F 27 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=40
+OUT:4 28 29 2 3 
+---KWPReceive sz=0 blockCounter=41
+IN: sz=16 data=F 29 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=42
+OUT:4 2A 29 2 3 
+---KWPReceive sz=0 blockCounter=43
+IN: sz=16 data=F 2B E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=44
+OUT:4 2C 29 2 3 
+---KWPReceive sz=0 blockCounter=45
+IN: sz=16 data=F 2D E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=46
+OUT:4 2E 29 2 3 
+---KWPReceive sz=0 blockCounter=47
+IN: sz=16 data=F 2F E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=48
+OUT:4 30 29 2 3 
+---KWPReceive sz=0 blockCounter=49
+IN: sz=16 data=F 31 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=50
+OUT:4 32 29 2 3 
+---KWPReceive sz=0 blockCounter=51
+IN: sz=16 data=F 33 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=52
+OUT:4 34 29 2 3 
+---KWPReceive sz=0 blockCounter=53
+IN: sz=16 data=F 35 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=54
+OUT:4 36 29 2 3 
+---KWPReceive sz=0 blockCounter=55
+IN: sz=16 data=F 37 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=56
+OUT:4 38 29 2 3 
+---KWPReceive sz=0 blockCounter=57
+IN: sz=16 data=F 39 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=58
+OUT:4 3A 29 2 3 
+---KWPReceive sz=0 blockCounter=59
+IN: sz=16 data=F 3B E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=60
+OUT:4 3C 29 2 3 
+---KWPReceive sz=0 blockCounter=61
+IN: sz=16 data=F 3D E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=62
+OUT:4 3E 29 2 3 
+---KWPReceive sz=0 blockCounter=63
+IN: sz=16 data=F 3F E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=64
+OUT:4 40 29 2 3 
+---KWPReceive sz=0 blockCounter=65
+IN: sz=16 data=F 41 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=66
+OUT:4 42 29 2 3 
+---KWPReceive sz=0 blockCounter=67
+IN: sz=16 data=F 43 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=68
+OUT:4 44 29 2 3 
+---KWPReceive sz=0 blockCounter=69
+IN: sz=16 data=F 45 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=70
+OUT:4 46 29 2 3 
+---KWPReceive sz=0 blockCounter=71
+IN: sz=16 data=F 47 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=72
+OUT:4 48 29 2 3 
+---KWPReceive sz=0 blockCounter=73
+IN: sz=16 data=F 49 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=74
+OUT:4 4A 29 2 3 
+---KWPReceive sz=0 blockCounter=75
+IN: sz=16 data=F 4B E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=76
+OUT:4 4C 29 2 3 
+---KWPReceive sz=0 blockCounter=77
+IN: sz=16 data=F 4D E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=78
+OUT:4 4E 29 2 3 
+---KWPReceive sz=0 blockCounter=79
+IN: sz=16 data=F 4F E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=80
+OUT:4 50 29 2 3 
+---KWPReceive sz=0 blockCounter=81
+IN: sz=16 data=F 51 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=82
+OUT:4 52 29 2 3 
+---KWPReceive sz=0 blockCounter=83
+IN: sz=16 data=F 53 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=84
+OUT:4 54 29 2 3 
+---KWPReceive sz=0 blockCounter=85
+IN: sz=16 data=F 55 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=86
+OUT:4 56 29 2 3 
+---KWPReceive sz=0 blockCounter=87
+IN: sz=16 data=F 57 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------readBlock 2
+---KWPSend sz=5 blockCounter=88
+OUT:4 58 29 2 3 
+---KWPReceive sz=0 blockCounter=89
+IN: sz=16 data=F 59 E7 24 5D 14 13 64 14 40 85 0 5 A 78 3 
+count=4
+type=36  a=93  b=20  text=238280.00 km
+type=19  a=100  b=20  text=20.00 l
+type=64  a=133  b=0  text=133.00 Ohm
+type=5  a=10  b=120  text=20.00 c
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+ERROR: timeout
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+ERROR: invalid maxsize
+------readBlock 2
+---KWPSend sz=5 blockCounter=1
+OUT:4 1 29 2 3 
+ERROR: invalid complement
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+ERROR: invalid maxsize
+------readBlock 3
+---KWPSend sz=5 blockCounter=1
+OUT:4 1 29 3 3 
+ERROR: invalid complement
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+ERROR: timeout
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+IN: sz=3 data=55 1 8A 
+------readconnectblocks
+---KWPReceive sz=0 blockCounter=1
+ERROR: invalid maxsize
+------readBlock 20
+---KWPSend sz=5 blockCounter=1
+OUT:4 1 29 14 3 
+ERROR: invalid complement
+------connect addr=1 baud=10400
+---KWP 5 baud init
+bit0=0 startbit
+bit1=1
+bit2=0
+bit3=0
+bit4=0
+bit5=0
+bit6=0
+bit7=0
+bit8=0 parity
+bit9=1 stopbit
+---KWPReceive sz=3 blockCounter=0
+
