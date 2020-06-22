@@ -1,5 +1,5 @@
 #include "AnalogButtons.h"
-#include <Arduino.h>
+//#include <Arduino.h>
 
 Button::Button(uint16_t value, void (*clickFunction)(void), void (*holdFunction)(void), uint16_t holdDuration, uint16_t holdInterval) {
 	this->value = value;

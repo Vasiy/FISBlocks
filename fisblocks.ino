@@ -1,4 +1,5 @@
-#include <Arduino.h>
+/* MAIN PROJECT */
+//#include <Arduino.h>
 #include "KWP.h"
 #include "FISLib.h"
 #include "AnalogMultiButton.h" // https://github.com/dxinteractive/AnalogMultiButton
@@ -6,18 +7,49 @@
 #define MAX_CONNECT_RETRIES 5
 #define NENGINEGROUPS 7
 #define NDASHBOARDGROUPS 1
-#define NMODULES 2
+#define NMODULES 3              // numbers of controlled groups
 
-// KWP
-#define pinKLineRX 5
-#define pinKLineTX 4
+/* uncomment to enable boot message and boot image. Removed due excessive memory consumption */
+//#define Atmega32u4    // limited memory - welcome message and graphics disabled
+#define Atmega328
+
+#ifndef Atmega32u4 
+//  #include "GetBootMessage.h"
+//    #define bootmsg
+//    #define bootimg
+  #ifndef Atmega328
+    #include "U8g2lib.h"  
+      U8G2_SSD1306_128X64_NONAME_1_3W_SW_SPI u8g2(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* cs=*/ 10, /* reset=*/ 8);
+  #endif
+#endif
+
+// KWP 
+#ifdef Atmega32u4 
+  const uint8_t pinKLineRX = 5;
+  const uint8_t pinKLineTX = 4;
+#endif
+#ifdef Atmega328
+  const uint8_t pinKLineRX = 2;
+  const uint8_t pinKLineTX = 3;
+  // CDC
+  /*const byte dinCDC = 6;
+  const byte doutCDC = 7;
+  const byte clkCDC = 8; */
+#endif
 KWP kwp(pinKLineRX, pinKLineTX);
 
-//FIS
-const int pinENABLE = 14;
-const int pinCLOCK = 15;
-const int pinDATA = 16;
-FISLib LCD(pinENABLE, pinCLOCK, pinDATA);
+// FIS
+#ifdef Atmega32u4
+  const uint8_t FIS_CLK = 14; 
+  const uint8_t FIS_DATA = 10; 
+  const uint8_t FIS_ENA = 16;
+#endif
+#ifdef Atmega328
+  const uint8_t FIS_CLK = 4;
+  const uint8_t FIS_DATA = 5; 
+  const uint8_t FIS_ENA = 6; 
+#endif  
+FISLib FIS(FIS_ENA, FIS_CLK, FIS_DATA);
 
 //Buttons
 #define btn1PIN A3
@@ -33,6 +65,9 @@ const int btn_CARS=123;
 
 int engineGroups[NENGINEGROUPS] = { 2, 3, 20, 31, 118, 115, 15 };
 int dashboardGroups[NDASHBOARDGROUPS] = { 2 };
+int absGroups[NDASHBOARDGROUPS] = { 1 };                          
+int NABSGROUPS = { 1 };                                           //abs groups to read
+//int airbagGroups[NDASHBOARDGROUPS] = { 1 };                       //airbag groups to read
 
 // Note: Each unit can have his own baudrate.
 // If 10400 not works whit your unit try whit other, posible values are:
@@ -40,7 +75,9 @@ int dashboardGroups[NDASHBOARDGROUPS] = { 2 };
 
 KWP_MODULE engine    = { "ECU",     ADR_Engine,    10400, engineGroups,    NENGINEGROUPS};
 KWP_MODULE dashboard = { "CLUSTER", ADR_Dashboard, 10400, dashboardGroups, NDASHBOARDGROUPS};
-KWP_MODULE *modules[NMODULES]={ &dashboard, &engine };
+KWP_MODULE absunit = {"ABS", ADR_ABS_Brakes, absGroups, NABSGROUPS};
+//KWP_MODULE airbag = {"AIRBAG", ADR_Airbag, airbagGroups, NAIRBAGGROUPS};
+KWP_MODULE *modules[NMODULES]={ &dashboard, &engine, &absunit };
 
 KWP_MODULE *currentModule=modules[0];
 int currentGroup=0;
@@ -97,22 +134,24 @@ void refreshParams(int type){
 void setup(){
   Serial.begin(9600);
   for(int i=0; i<8; i++){
-    LCD.showText("IS FIS","BLOCKS!");
+    FIS.showText("IS FIS","BLOCKS!");
     delay(500);
   }
   for(int i=0; i<8; i++){
-    LCD.showText("HI! I AM","A GTI :)");
+    FIS.showText("*** AUDI ***","ALLROAD 1 GEN");
     delay(500);
   }
+//  Serial.println('Init complete');
 }
 
 void loop(){
   getKeyStatus();
-     
+//  Serial.print('key pressed - ');Serial.println( getKeyStatus() ); 
+  
   if(!kwp.isConnected()){
-    LCD.showText("Starting",currentModule->name);
+    FIS.showText("Starting",currentModule->name);
     if(kwp.connect(currentModule->addr, currentModule->baudrate)){
-      LCD.showText("Con. OK!","Reading");
+      FIS.showText("Con. OK!","Reading");
       connRetries=0;
     }
     else{ // Antiblocking
@@ -132,7 +171,7 @@ void loop(){
     SENSOR resultBlock[maxSensors];
     nSensors=kwp.readBlock(currentModule->addr, currentModule->groups[currentGroup], maxSensors, resultBlock);
     if(resultBlock[currentSensor].value != ""){
-      LCD.showText(resultBlock[currentSensor].desc, resultBlock[currentSensor].value+" "+resultBlock[currentSensor].units);
+      FIS.showText(resultBlock[currentSensor].desc, resultBlock[currentSensor].value+" "+resultBlock[currentSensor].units);
       if(count>8){
         refreshParams(1);
         count=0;
