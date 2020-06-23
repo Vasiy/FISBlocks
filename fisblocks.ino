@@ -4,18 +4,20 @@
 #include "FISLib.h"
 #include "AnalogMultiButton.h" // https://github.com/dxinteractive/AnalogMultiButton
 
-#define MAX_CONNECT_RETRIES 5
-
 /* uncomment to enable boot message and boot image. Removed due excessive memory consumption */
 //#define Atmega32u4    // limited memory - welcome message and graphics disabled
-#define Atmega328 true 
+#define Atmega328 true
+//#define esp32
 
 #ifndef Atmega32u4 
 //  #include "GetBootMessage.h"
 //    #define bootmsg
 //    #define bootimg
   #ifndef Atmega328
+    #include "Wire.h"         // enable i2c bus
     #include "U8g2lib.h"  
+    #define gaugeSDA 21       // default pins for esp32 wire.h
+    #define gaugeSDL 22       // default pins for esp32 wire.h
       U8G2_SSD1306_128X64_NONAME_1_3W_SW_SPI u8g2(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* cs=*/ 10, /* reset=*/ 8);
   #endif
 #endif
@@ -28,24 +30,33 @@
 #ifdef Atmega328
   const uint8_t pinKLineRX = 3;
   const uint8_t pinKLineTX = 2;
+#endif
+#ifdef esp32
+  const uint8_t pinKLineRX = 16;  // serial 2
+  const uint8_t pinKLineTX = 17;  // serial 2
   // CDC
-  /*const byte dinCDC = 6;
-  const byte doutCDC = 7;
-  const byte clkCDC = 8; */
+  const uint8_t dinCDC  = 21;
+  const uint8_t doutCDC = 22;
+  const uint8_t clkCDC  = 23;
 #endif
 KWP kwp(pinKLineRX, pinKLineTX);
 
 // FIS
 #ifdef Atmega32u4
-  const uint8_t FIS_CLK = 14; 
+  const uint8_t FIS_CLK  = 14; 
   const uint8_t FIS_DATA = 10; 
-  const uint8_t FIS_ENA = 16;
+  const uint8_t FIS_ENA  = 16;
 #endif
 #ifdef Atmega328
-  const uint8_t FIS_CLK = 4;
+  const uint8_t FIS_CLK  = 4;
   const uint8_t FIS_DATA = 5; 
-  const uint8_t FIS_ENA = 6; 
-#endif  
+  const uint8_t FIS_ENA  = 6; 
+#endif
+#ifdef esp32
+  const uint8_t FIS_CLK  = 27;
+  const uint8_t FIS_DATA = 25; 
+  const uint8_t FIS_ENA  = 26; 
+#endif
 FISLib FIS(FIS_ENA, FIS_CLK, FIS_DATA);
 
 //Buttons
@@ -57,6 +68,10 @@ FISLib FIS(FIS_ENA, FIS_CLK, FIS_DATA);
   #define btn1PIN A0
   #define btn2PIN A1
 #endif
+#ifdef esp32
+  #define btn1PIN 34  // ADC1 CH6
+  #define btn2PIN 35  // ADC1 CH7
+#endif
 
 const uint8_t BUTTONS_TOTAL = 2; // 2 button on each button pin
 const int BUTTONS_VALUES[BUTTONS_TOTAL] = {30, 123}; // btn value
@@ -67,6 +82,7 @@ AnalogMultiButton btn2(btn2PIN, BUTTONS_TOTAL, BUTTONS_VALUES);
 const int btn_INFO = 30;
 const int btn_CARS=123; 
 
+#define MAX_CONNECT_RETRIES 5
 #define NENGINEGROUPS 7
 #define NDASHBOARDGROUPS 3
 #define NMODULES 2              // numbers of controlled groups
@@ -99,7 +115,6 @@ int count=0;
 // 0 - Nothing
 // 1 - Key Up pressed
 // 2 - Key Down pressed
-
 int getKeyStatus() {
 /*  btn1.update();
   btn2.update();
@@ -109,94 +124,100 @@ int getKeyStatus() {
   if ( btn2.isPressed(btn_INFO) ) return 3;   // switch between groups */
   btn1.update();
   btn2.update();
-  if ( btn1.isPressedAfter(btn_NAV,2000) ) return 4;  // disable screen after holding more than 2 sec
-  if ( btn1.isPressed(btn_RETURN) ) return 1;         // return and cars switch between modules
-  if ( btn1.isPressedAfter(btn_RETURN,2000) ) return 11;         // return and cars switch between modules
-  if ( btn2.isPressed(btn_CARS) ) return 2;
-  if ( btn2.isPressedAfter(btn_CARS,2000) ) return 21;
-  if ( btn2.isPressed(btn_INFO) ) return 3;           // switch between groups
-  else return 0;  
+  if ( btn1.isPressed(btn_NAV) ) return 1;                   // NAV just pressed (TBD)
+    if ( btn1.isPressedAfter(btn_NAV,2000) ) return 11;      // NAV holded > 2sec = disable screen
+  if ( btn1.isPressed(btn_RETURN) ) return 2;                // RETURN switch to custom screen (TBD)
+    if ( btn1.isPressedAfter(btn_RETURN,2000) ) return 21;   // RETURN switch to home (default) screen
+  if ( btn2.isPressed(btn_CARS) ) return 3;                  // CARS just pressed = switch between modules (ECU/Instrument/ABS/etc)
+    if ( btn2.isPressedAfter(btn_CARS,2000) ) return 31;     // CARS holded > 2 sec (TBD maybe switch to the first module)
+  if ( btn2.isPressed(btn_INFO) ) return 4;                  // INFO just pressed = switch between groups in current module
+    if ( btn2.isPressedAfter(btn_CARS,2000) ) return 41;     // INFO holded > 2 sec (TBD maybe switch to the first group in module)
+  else return 0;                                             // no key pressed
 }
 
-void refreshParams(int type){
-  if(type==1){
-    if(currentSensor < nSensors -1) currentSensor++;
-    else{
+void refreshParams( int type ) {
+  if ( type == 1 ) {
+    if (currentSensor < nSensors -1 ) currentSensor++;
+    else {
       currentSensor=0;
-      if(currentGroup < (currentModule->ngroups) - 1) currentGroup++;
-      else{
-        if(currentModule->addr == ADR_Dashboard) currentModule=modules[1];
+      if ( currentGroup < (currentModule->ngroups) - 1 ) currentGroup++;
+      else {
+        if ( currentModule->addr == ADR_Dashboard ) currentModule=modules[1];
         else currentModule=modules[0];
-        currentGroup=0;
+        currentGroup = 0;
         kwp.disconnect();
       }
     }
   }
-  else if(type==2){
-    if(currentSensor > 0) currentSensor--;
-    else{
-      currentSensor=nSensors-1;
-      if(currentGroup > 0) currentGroup--;
-      else{
-        if(currentModule->addr == ADR_Dashboard) currentModule=modules[1];
+  else if ( type==2 ) {
+    if ( currentSensor > 0 ) currentSensor--;
+    else {
+      currentSensor = nSensors - 1;
+      if ( currentGroup > 0 ) currentGroup--;
+      else {
+        if ( currentModule->addr == ADR_Dashboard ) currentModule=modules[1];
         else currentModule=modules[0];
-        currentGroup=currentModule->ngroups-1;
+        currentGroup = currentModule->ngroups - 1;
         kwp.disconnect();
       }
     }
   }
 }
 
-void setup(){
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(9600);
-  for(int i=0; i<8; i++){
+  for ( int i=0; i<8; i++ ) {
     FIS.showText("IS FIS","BLOCKS!");
-    delay(500);
+    delay(100);
   }
-  for(int i=0; i<8; i++){
+  for ( int i=0; i<8; i++ ) {
     FIS.showText("*** AUDI ***","ALLROAD 1 GEN");
-    delay(500);
+    delay(100);
   }
-//  Serial.println('Init complete');
+
+  Serial.println('Init complete');
 }
 
-void loop(){
+void loop() {
+
   getKeyStatus();
 //  Serial.print('key pressed - ');Serial.println( getKeyStatus() ); 
   
-  if(!kwp.isConnected()){
-    FIS.showText("Starting",currentModule->name);
-    if(kwp.connect(currentModule->addr, currentModule->baudrate)){
-      FIS.showText("Con. OK!","Reading");
+  if (!kwp.isConnected()) {                                                   // check if KWP is not connected to prevent simultaneous connections
+    digitalWrite(LED_BUILTIN, LOW);
+    FIS.showText("Starting",currentModule->name);                             // display Starting text on the FIS
+    if (kwp.connect(currentModule->addr, currentModule->baudrate)) {          // trying to connect current KWP module
+      digitalWrite(LED_BUILTIN, HIGH);                                        // turn LED on if connected
+      FIS.showText("Con. OK!","Reading");                                     // display Connected if connection is successfull
       connRetries=0;
     }
-    else{ // Antiblocking
-      if(connRetries > MAX_CONNECT_RETRIES){
-        if(currentModule->addr == ADR_Dashboard) currentModule=modules[1];
+     else {                                                                   // connect was unsuccessfull
+      if(connRetries > MAX_CONNECT_RETRIES) {                                 // preventing blocking bus due KWP connection retries out
+        if (currentModule->addr == ADR_Dashboard) currentModule=modules[1];
         else currentModule=modules[0];
-        currentGroup=0;
+        currentGroup=0;                                                       // reset to 0 group, 0 sensor
         currentSensor=0;
         nSensors=0;
         connRetries=0;
       }
       else connRetries++;
     }
-
   }
-  else{
+  else {                                                                      // KWP connected
     SENSOR resultBlock[maxSensors];
-    nSensors=kwp.readBlock(currentModule->addr, currentModule->groups[currentGroup], maxSensors, resultBlock);
-    if(resultBlock[currentSensor].value != ""){
-      FIS.showText(resultBlock[currentSensor].desc, resultBlock[currentSensor].value+" "+resultBlock[currentSensor].units);
-      if(count>8){
+    nSensors = kwp.readBlock( currentModule->addr, currentModule->groups[currentGroup], maxSensors, resultBlock );
+    if ( resultBlock[currentSensor].value != "" ) {
+      FIS.showText( resultBlock[currentSensor].desc, resultBlock[currentSensor].value+" "+resultBlock[currentSensor].units );
+      if (count > 8 ) {
         refreshParams(1);
-        count=0;
+        count = 0;
       }
       else count++;
     }
-    else{
+    else {
       refreshParams(1); // WTF?
-      count=0;
+      count = 0;
     }
   }
 }
