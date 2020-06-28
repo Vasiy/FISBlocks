@@ -48,9 +48,9 @@ KWP kwp(pinKLineRX, pinKLineTX);
   const uint8_t FIS_ENA  = 16;
 #endif
 #ifdef Atmega328
-  const uint8_t FIS_CLK  = 4;
-  const uint8_t FIS_DATA = 5; 
-  const uint8_t FIS_ENA  = 6; 
+  const uint8_t FIS_CLK  = 5;
+  const uint8_t FIS_DATA = 6; 
+  const uint8_t FIS_ENA  = 4; 
 #endif
 #ifdef esp32
   const uint8_t FIS_CLK  = 27;
