@@ -1,13 +1,13 @@
-/* MAIN PROJECT */
+/* WORKING PROJECT */
 //#include <Arduino.h>
 #include "KWP.h"
 #include "FISLib.h"
 #include "AnalogMultiButton.h" // https://github.com/dxinteractive/AnalogMultiButton
 
 /* uncomment to enable boot message and boot image. Removed due excessive memory consumption */
-//#define Atmega32u4    // limited memory - welcome message and graphics disabled
+//#define Atmega32u4 true   // limited memory - welcome message and graphics disabled
 #define Atmega328 true
-//#define esp32
+//#define esp32 true
 
 #ifndef Atmega32u4 
 //  #include "GetBootMessage.h"
