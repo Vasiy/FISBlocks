@@ -6,8 +6,8 @@
 
 /* uncomment to enable boot message and boot image. Removed due excessive memory consumption */
 //#define Atmega32u4    // limited memory - welcome message and graphics disabled
-#define Atmega328 true
-//#define esp32
+//#define Atmega328 true
+#define esp32 true
 
 #ifndef Atmega32u4 
 //  #include "GetBootMessage.h"
@@ -18,7 +18,9 @@
     #include "U8g2lib.h"  
     #define gaugeSDA 21       // default pins for esp32 wire.h
     #define gaugeSDL 22       // default pins for esp32 wire.h
-      U8G2_SSD1306_128X64_NONAME_1_3W_SW_SPI u8g2(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* cs=*/ 10, /* reset=*/ 8);
+    #define key2Pin 2
+    #define key3Pin 4
+      //U8G2_SSD1306_128X64_NONAME_1_3W_SW_SPI u8g2(U8G2_R0, /* clock=*/ 13, /* data=*/ 11, /* cs=*/ 10, /* reset=*/ 8);
   #endif
 #endif
 
@@ -34,11 +36,33 @@
 #ifdef esp32
   const uint8_t pinKLineRX = 16;  // serial 2
   const uint8_t pinKLineTX = 17;  // serial 2
+#endif
   // CDC
+#ifdef esp32
   const uint8_t dinCDC  = 21;
   const uint8_t doutCDC = 22;
   const uint8_t clkCDC  = 23;
 #endif
+  //webserver
+#ifdef esp32
+  #include "WiFi.h"
+  #include "ESPAsyncWebServer.h"
+  #include "SPIFFS.h"
+  #include <I2C_Anything.h> //allow to send averything via I2C
+  #include <EEPROM.h>       //for storing settings
+
+  /* WIFI settings */
+const char* ssid = "GAUGE";
+const char* password = "12345678";
+AsyncWebServer webserver(80);  // Set web server port number to 80
+String header;  // Variable to store the HTTP request
+/* IPAddress local_ip(192,168,245,1); // gauge ip address
+IPAddress gateway(192,168,245,1);   // gateway ip address
+IPAddress subnet(255,255,255,248);  // gauge network host min .1, host max .6 */
+AsyncWebServer server(80);
+#endif
+
+
 KWP kwp(pinKLineRX, pinKLineTX);
 
 // FIS
@@ -167,6 +191,14 @@ void refreshParams( int type ) {
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(9600);
+#ifdef esp32  
+  // Initialize SPIFFS
+  if(!SPIFFS.begin(true)){
+    Serial.println("An Error has occurred while mounting SPIFFS");
+    return;
+  }
+  Serial.println(WiFi.softAP(ssid, password, 11, 0, 4) ? "Gauge WiFi Ready" : "Failed!");
+#endif  
   for ( int i=0; i<8; i++ ) {
     FIS.showText("IS FIS","BLOCKS!");
     delay(100);
@@ -175,7 +207,6 @@ void setup() {
     FIS.showText("*** AUDI ***","ALLROAD 1 GEN");
     delay(100);
   }
-
   Serial.println('Init complete');
 }
 
