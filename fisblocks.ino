@@ -1,5 +1,5 @@
 /* WORKING PROJECT */
-//#include <Arduino.h>
+#include <Arduino.h>
 #include "KWP.h"
 #include "FISLib.h"
 #include "AnalogMultiButton.h" // https://github.com/dxinteractive/AnalogMultiButton
@@ -166,7 +166,7 @@ void refreshParams( int type ) {
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
-  Serial.begin(9600);
+  Serial.begin(57600);
   for ( int i=0; i<8; i++ ) {
     FIS.showText("IS FIS","BLOCKS!");
     delay(100);
@@ -176,7 +176,7 @@ void setup() {
     delay(100);
   }
 
-  Serial.println('Init complete');
+  Serial.println("Init complete");
 }
 
 void loop() {
@@ -185,10 +185,10 @@ void loop() {
 //  Serial.print('key pressed - ');Serial.println( getKeyStatus() ); 
   
   if (!kwp.isConnected()) {                                                   // check if KWP is not connected to prevent simultaneous connections
-    digitalWrite(LED_BUILTIN, LOW);
+    //digitalWrite(LED_BUILTIN, LOW);
     FIS.showText("Starting",currentModule->name);                             // display Starting text on the FIS
     if (kwp.connect(currentModule->addr, currentModule->baudrate)) {          // trying to connect current KWP module
-      digitalWrite(LED_BUILTIN, HIGH);                                        // turn LED on if connected
+      //digitalWrite(LED_BUILTIN, HIGH);                                        // turn LED on if connected
       FIS.showText("Con. OK!","Reading");                                     // display Connected if connection is successfull
       connRetries=0;
     }
