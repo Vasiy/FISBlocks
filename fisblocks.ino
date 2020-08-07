@@ -13,9 +13,9 @@
 //  #include "GetBootMessage.h"
 //    #define bootmsg
 //    #define bootimg
-  #ifndef Atmega328
-    #include "Wire.h"         // enable i2c bus
-    #include "U8g2lib.h"  
+#ifdef esp32
+//    #include "Wire.h"         // enable i2c bus
+//    #include "U8g2lib.h"  
     #define gaugeSDA 21       // default pins for esp32 wire.h
     #define gaugeSDL 22       // default pins for esp32 wire.h
     #define key2Pin 2
