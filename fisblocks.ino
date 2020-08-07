@@ -1,5 +1,6 @@
-/* MAIN PROJECT */
-//#include <Arduino.h>
+
+/* WORKING PROJECT */
+#include <Arduino.h>
 #include "KWP.h"
 #include "FISLib.h"
 #include "AnalogMultiButton.h" // https://github.com/dxinteractive/AnalogMultiButton
@@ -190,6 +191,9 @@ void refreshParams( int type ) {
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
+<<<<<<< HEAD
+  Serial.begin(57600);
+=======
   Serial.begin(9600);
 #ifdef esp32  
   // Initialize SPIFFS
@@ -199,6 +203,7 @@ void setup() {
   }
   Serial.println(WiFi.softAP(ssid, password, 11, 0, 4) ? "Gauge WiFi Ready" : "Failed!");
 #endif  
+>>>>>>> 0e49f66d3cc0cedc13a493dfbc24c14d73a4d1be
   for ( int i=0; i<8; i++ ) {
     FIS.showText("IS FIS","BLOCKS!");
     delay(100);
@@ -207,7 +212,12 @@ void setup() {
     FIS.showText("*** AUDI ***","ALLROAD 1 GEN");
     delay(100);
   }
+<<<<<<< HEAD
+
+  Serial.println("Init complete");
+=======
   Serial.println('Init complete');
+>>>>>>> 0e49f66d3cc0cedc13a493dfbc24c14d73a4d1be
 }
 
 void loop() {
@@ -216,10 +226,10 @@ void loop() {
 //  Serial.print('key pressed - ');Serial.println( getKeyStatus() ); 
   
   if (!kwp.isConnected()) {                                                   // check if KWP is not connected to prevent simultaneous connections
-    digitalWrite(LED_BUILTIN, LOW);
+    //digitalWrite(LED_BUILTIN, LOW);
     FIS.showText("Starting",currentModule->name);                             // display Starting text on the FIS
     if (kwp.connect(currentModule->addr, currentModule->baudrate)) {          // trying to connect current KWP module
-      digitalWrite(LED_BUILTIN, HIGH);                                        // turn LED on if connected
+      //digitalWrite(LED_BUILTIN, HIGH);                                        // turn LED on if connected
       FIS.showText("Con. OK!","Reading");                                     // display Connected if connection is successfull
       connRetries=0;
     }
